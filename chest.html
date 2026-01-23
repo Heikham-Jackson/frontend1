@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            margin: 0;
+              background-color: rgb(195, 195, 196);
+        }
+        .board {
+          background-color: aliceblue;
+            height: 330px;
+            width: 330px;         
+            border: 2px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            box-shadow: 8px 7px 20px rgb(129, 122, 122);
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column1 {
+            height: 40px;
+            width: 40px;
+            background-color: rgba(0, 0, 0, 0.559);
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .column2 {
+            height: 40px;
+            width: 40px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .board i{
+            font-size: 24px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="board">
+        <div class="row">
+            <div class="column1">
+                <i class="fa-regular fa-chess-rook"></i>
+            </div>
+            <div class="column2">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-rook"></i>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="column2"><i class="fa-regular fa-chess-knight"></i></div>
+            <div class="column1">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-knight"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column1">
+                <i class="fa-regular fa-chess-bishop"></i>
+            </div>
+            <div class="column2">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-pawn">
+
+                </i></div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-bishop"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column2">
+                <i class="fa-regular fa-chess-queen"></i>
+            </div>
+            <div class="column1">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-queen"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column1">
+                <i class="fa-regular fa-chess-king"></i>
+            </div>
+            <div class="column2">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-king"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column2">
+                <i class="fa-regular fa-chess-bishop"></i>
+            </div>
+            <div class="column1">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-bishop"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column1">
+                <i class="fa-regular fa-chess-knight"></i>
+            </div>
+            <div class="column2">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-knight"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column2">
+                <i class="fa-regular fa-chess-rook"></i>
+            </div>
+            <div class="column1">
+                <i class="fa-regular fa-chess-pawn"></i>
+            </div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2"></div>
+            <div class="column1"></div>
+            <div class="column2">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="column1">
+                <i class="fa-solid fa-chess-rook"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+ <style>
+    body{
+        margin: 0;
+    
+    }
+    .nav{
+        display: flex;
+        height: 45px;
+        background-color: rgb(7, 71, 71);
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px ;
+    }
+    .nav > img{
+        height: 45px;
+        width: 70px;
+        object-fit: cover;
+
+    }
+    .link{
+        display: flex;
+        gap: 15px;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    .card{
+        margin: 10px;
+        border: solid 1px black;
+        width: 200px;
+        position: relative;
+        bottom: 50%;
+        right: -50%;
+    }
+    .image{
+        display: flex;
+        height: 100px;
+        width: 200px;
+        background-color: gray;
+        align-items: center;
+        justify-content: center;
+    }
+    .image > h1{
+        margin: 0;
+        display: flex;
+        
+        
+    }
+    .productDetails{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .productDetails > h4{
+        font-weight: bold;
+        margin: 0;
+    }
+    .productDetails > p{
+        font-size: 12px;
+        margin: 0;
+        padding: 4px 0;
+    }
+    .values{
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+    }
+    .values > p{
+        margin: 0;
+        font-size: 12px;
+    }
+    .values > h4{
+        margin: 0;
+        color: rgb(6, 195, 6);
+    }
+    .btn{
+        background-color: rgb(0, 145, 255);
+        width: 100%;
+        border: none;
+        padding: 4px;
+        font-size: 12px;
+        color: white;
+        border-radius: 5px;
+        
+    }
+    :hover > .btn{
+        cursor: pointer;
+        background-color: rgb(11, 48, 216);
+    }
+ </style>
+
+</head>
+
+
+
+<body>
+    <nav class="nav">
+        <img 
+        src="https://www.logologo.com/logos/abstract-isometric-logo-design-free-logo.jpg" 
+        alt="Logo">
+        <div class="link">
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Help</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="card">
+       <div class="image">
+        <h1>150X250</h1>
+       </div>
+        <div class="productDetails">
+            <h4>Product Name</h4>
+            <p>Lorem ipsum dolor sit amet dicta rerum officia totam natus debitis quo corporis in explicabo aliquam sit.</p>
+            <div class="values">
+                <h4>$99.99</h4>
+                <p>(4.5)</p>
+            </div>
+            <button class="btn">Add to Cart</button>
+        </div>  
+    </div>
+
+   
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100dvh;
+            display: grid;
+            place-items: center;
+        }
+
+        .card {
+            border: 1px solid rgb(205, 205, 205);
+            width: 280px;
+            padding: 8px;
+            border-radius: 18px;
+        }
+
+        .imgContainer {
+            position: relative;
+        }
+
+        .imgContainer>img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+            color: white;
+            background-color: black;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 10px;
+        }
+
+        .tag>i {
+            color: rgb(255, 129, 4);
+        }
+
+        /* details */
+        .details {
+            padding: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            margin: 0;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price>h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+        }
+
+        .star {
+            background-color: orange;
+            font-size: 9px;
+            border-radius: 7px;
+            color: white;
+            height: 20px;
+            width: 20px;
+            display: grid;
+            place-items: center;
+        }
+
+        .action {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .cart {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .quantity {
+            background-color: rgb(237, 237, 237);
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 10px;
+            font-weight: bolder;
+            border-radius: 10px;
+        }
+
+        .quantity>i {
+            color: gray;
+        }
+
+        .addToCart {
+            background-color: rgb(37, 37, 37);
+            color: rgba(255, 255, 255, 0.832);
+            height: 40px;
+            width: 40px;
+            border-radius: 12px;
+            font-size: 12px;
+            border: none;
+        }
+
+        .discount {
+            background-color: rgb(37, 37, 37);
+            color: rgba(255, 255, 255, 0.832);
+            height: 40px;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .discount>i {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="imgContainer">
+            <div class="tag">
+                <i class="fa-solid fa-tag"></i>
+                COLA10
+            </div>
+            <img src="https://royceindia.com/cdn/shop/files/ChocolateBarBlack_1.webp?v=1705398052&width=1080" alt="">
+        </div>
+
+        <div class="details">
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum fuga neque. Fugiat!</p>
+            <div class="price">
+                <h4>₹299.00</h4>
+                <div class="rating">
+                    4.4
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action">
+                <div class="cart">
+                    <div class="quantity">
+                        <i class="fa-solid fa-plus"></i>
+                        1
+                        <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <button class="addToCart">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                    </button>
+                </div>
+
+                <button class="discount">
+                    Exclusive Discounted Prices
+                    <i class="fa-regular fa-circle-up"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
