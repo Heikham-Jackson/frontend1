@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+</head>
+
+<body>
+    <nav class="fixed top-0 w-full py-4 px-5  flex items-center justify-between bg-indigo-400">
+        <div class="flex items-center gap-2 hover:cursor-pointer">
+            <div class="flex flex-col gap-1">
+                <div class=" flex gap-1">
+                    <div class="h-3 w-3 bg-white"></div>
+                    <div class="h-3 w-3 bg-red-400"></div>
+                </div>
+                <div class="flex gap-1">
+                    <div class="h-3 w-3 bg-blue-400"></div>
+                    <div class="h-3 w-3 bg-green-400"></div>
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold">
+                Thoi'sStore
+            </h1>
+
+        </div>
+        <div class="flex items-center gap-12 text-white/90 text-lg max-md:hidden">
+            <a class="hover:text-blue-700" href="">Home</a>
+            <a class="hover:text-blue-700" href="">Product</a>
+            <a class="hover:text-blue-700" href="">About</a>
+            <a class="hover:text-blue-700" href="">Services</a>
+            <a href="">
+                <img class="w-12 h-10 object-cover rounded-full"
+                    src="https://static.vecteezy.com/system/resources/thumbnails/029/271/062/small/avatar-profile-icon-in-flat-style-male-user-profile-illustration-on-isolated-background-man-profile-sign-business-concept-vector.jpg"
+                    alt="">
+            </a>
+        </div>
+        <div class="hidden max-md:block text-2xl text-white/90">
+        <i class=" fa-solid fa-bars "></i>
+        </div>
+    </nav>
+    <div class="bg-gray-100 h-dvh ">
+            <form 
+            action=""
+            class="bg-white w-150 max-xl:w-125 max-lg:w-105 max-md:85 max-sm:w-75
+            rounded-xl px-2.5 py-10 shadow-lg border border-gray-300  flex flex-col items-center gap-5 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] ">
+            
+                <h1 class=" text-2xl font-semibold">
+                    Welcome Back
+                </h1>
+
+                <i class="fa-solid fa-circle-user text-9xl"></i> 
+
+                <div class="flex flex-col items-center gap-5 m-2 box-border">
+                   
+                    <input 
+                    class="border  p-2 text-2xl rounded-xl border-gray-700 shadow-md
+                    w-145 max-xl:w-120 max-lg:w-100 max-md:80 max-sm:w-70" 
+                    type="email" placeholder="youremail@gmail.com">
+
+                    <input 
+                    class="border  p-2 text-2xl rounded-xl border-gray-700 shadow-md
+                    w-145 max-xl:w-120 max-lg:w-100 max-md:80 max-sm:w-70" 
+                    type="password" placeholder="Password">
+                </div>
+                <button class="bg-blue-500 w-full p-1.5 text-xl text-white/85 rounded-xl">
+                    <a href="profile.html">
+                       Sign In 
+                    </a>
+                    
+                </button>
+                
+            </form>
+             
+        
+    </div>
+    
+</body>
+
+</html>
