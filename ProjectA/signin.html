@@ -10,75 +10,84 @@
 
 </head>
 
-<body>
-    <nav class="fixed top-0 w-full py-4 px-5  flex items-center justify-between bg-indigo-400">
+<body class="bg-[url('./bgimage.webp')] bg-no-repeat bg-cover h-screen">
+    <nav class="sticky top-0 w-full py-2 px-5 flex items-center justify-between bg-indigo-400">
         <div class="flex items-center gap-2 hover:cursor-pointer">
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 animate-spin">
                 <div class=" flex gap-1">
-                    <div class="h-3 w-3 bg-white"></div>
-                    <div class="h-3 w-3 bg-red-400"></div>
+                    <div class="h-2 w-2 bg-white"></div>
+                    <div class="h-2 w-2 bg-red-400"></div>
                 </div>
                 <div class="flex gap-1">
-                    <div class="h-3 w-3 bg-blue-400"></div>
-                    <div class="h-3 w-3 bg-green-400"></div>
+                    <div class="h-2 w-2 bg-blue-400"></div>
+                    <div class="h-2 w-2 bg-green-400"></div>
                 </div>
             </div>
-            <h1 class="text-3xl font-bold">
-                Thoi'sStore
+            <h1 class="text-xl font-bold">
+                Nexus
             </h1>
 
         </div>
-        <div class="flex items-center gap-12 text-white/90 text-lg max-md:hidden">
+        <div class="flex items-center gap-12 text-white/90 text-sm max-md:hidden">
             <a class="hover:text-blue-700" href="">Home</a>
             <a class="hover:text-blue-700" href="">Product</a>
             <a class="hover:text-blue-700" href="">About</a>
             <a class="hover:text-blue-700" href="">Services</a>
             <a href="">
-                <img class="w-12 h-10 object-cover rounded-full"
-                    src="https://static.vecteezy.com/system/resources/thumbnails/029/271/062/small/avatar-profile-icon-in-flat-style-male-user-profile-illustration-on-isolated-background-man-profile-sign-business-concept-vector.jpg"
+                <img class="w-8 h-8 object-cover rounded-full"
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s"
                     alt="">
             </a>
         </div>
-        <div class="hidden max-md:block text-2xl text-white/90">
-        <i class=" fa-solid fa-bars "></i>
+        <div class="hidden max-md:block text-md text-white/90">
+            <i class=" fa-solid fa-bars "></i>
         </div>
     </nav>
-    <div class="bg-gray-100 h-dvh ">
-            <form 
-            action=""
-            class="bg-white w-150 max-xl:w-125 max-lg:w-105 max-md:85 max-sm:w-75
-            rounded-xl px-2.5 py-10 shadow-lg border border-gray-300  flex flex-col items-center gap-5 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] ">
-            
-                <h1 class=" text-2xl font-semibold">
-                    Welcome Back
-                </h1>
 
-                <i class="fa-solid fa-circle-user text-9xl"></i> 
+    <div class=" ">
+        <form action="" class="bg-white/50 w-150 max-xl:w-125 max-lg:w-105 max-md:85 max-sm:w-75
+            rounded-xl px-2.5 py-8 shadow-lg border border-gray-300  
+            flex flex-col items-center gap-4 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] ">
 
-                <div class="flex flex-col items-center gap-5 m-2 box-border">
-                   
-                    <input 
-                    class="border  p-2 text-2xl rounded-xl border-gray-700 shadow-md
-                    w-145 max-xl:w-120 max-lg:w-100 max-md:80 max-sm:w-70" 
-                    type="email" placeholder="youremail@gmail.com">
+            <h1 class=" text-2xl font-bold">
+                Welcome Back
+            </h1>
 
-                    <input 
-                    class="border  p-2 text-2xl rounded-xl border-gray-700 shadow-md
-                    w-145 max-xl:w-120 max-lg:w-100 max-md:80 max-sm:w-70" 
-                    type="password" placeholder="Password">
+            <i class="fa-solid fa-circle-user rounded-full text-7xl"></i>
+
+            <div class="flex flex-col items-center gap-5 m-2 box-border">
+
+                <input class="border bg-white px-2 py-0.5 text-md rounded-xl border-gray-700 shadow-md
+                    w-145 max-xl:w-120 max-lg:w-100 max-md:80 max-sm:w-70" type="email"
+                    placeholder="youremail@gmail.com">
+
+                <input class="border bg-white px-2 py-0.5 text-md rounded-xl border-gray-700 shadow-md
+                    w-145 max-xl:w-120 max-lg:w-100 max-md:80 max-sm:w-70" type="password" placeholder="Password">
+
+            </div>
+            <div class="flex justify-between w-full">
+                <div class="flex">
+                    <input class="scale-100" type="checkbox">
+                    <p>
+                        Remember Me
+                    </p>
                 </div>
-                <button class="bg-blue-500 w-full p-1.5 text-xl text-white/85 rounded-xl">
-                    <a href="profile.html">
-                       Sign In 
-                    </a>
-                    
-                </button>
-                
-            </form>
-             
-        
+                <a href=""
+                class="text-blue-900 font-semibold">
+                    Forgot password?
+                </a>
+            </div>
+            <button class="bg-blue-500 w-full p-1 text-xl text-white/85 rounded-xl">
+                <a href="home.html">
+                    Sign In
+                </a>
+
+            </button>
+
+        </form>
     </div>
-    
+
+
 </body>
 
 </html>

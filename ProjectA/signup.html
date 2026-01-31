@@ -9,62 +9,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
 </head>
-
-<body>
-    <nav class="fixed top-0 w-full py-4 px-5  flex items-center justify-between bg-indigo-400">
+<body class="bg-[url('./bgimage.webp')] bg-no-repeat bg-cover h-screen">
+   <nav class="sticky top-0 w-full py-2 px-5 flex items-center justify-between bg-indigo-400">
         <div class="flex items-center gap-2 hover:cursor-pointer">
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 animate-spin">
                 <div class=" flex gap-1">
-                    <div class="h-3 w-3 bg-white"></div>
-                    <div class="h-3 w-3 bg-red-400"></div>
+                    <div class="h-2 w-2 bg-white"></div>
+                    <div class="h-2 w-2 bg-red-400"></div>
                 </div>
                 <div class="flex gap-1">
-                    <div class="h-3 w-3 bg-blue-400"></div>
-                    <div class="h-3 w-3 bg-green-400"></div>
+                    <div class="h-2 w-2 bg-blue-400"></div>
+                    <div class="h-2 w-2 bg-green-400"></div>
                 </div>
             </div>
-            <h1 class="text-3xl font-bold">
-                Thoi'sStore
+            <h1 class="text-xl font-bold">
+                Nexus
             </h1>
 
         </div>
-        <div class="flex items-center gap-12 text-white/90 text-lg max-md:hidden">
+        <div class="flex items-center gap-12 text-white/90 text-sm max-md:hidden">
             <a class="hover:text-blue-700" href="">Home</a>
             <a class="hover:text-blue-700" href="">Product</a>
             <a class="hover:text-blue-700" href="">About</a>
             <a class="hover:text-blue-700" href="">Services</a>
             <a href="">
-                <img class="w-12 h-10 object-cover rounded-full"
-                    src="https://static.vecteezy.com/system/resources/thumbnails/029/271/062/small/avatar-profile-icon-in-flat-style-male-user-profile-illustration-on-isolated-background-man-profile-sign-business-concept-vector.jpg"
+                <img class="w-8 h-8 object-cover rounded-full"
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s"
                     alt="">
             </a>
         </div>
-        <div class="hidden max-md:block text-2xl text-white/90">
-        <i class=" fa-solid fa-bars "></i>
+        <div class="hidden max-md:block text-md text-white/90">
+            <i class=" fa-solid fa-bars "></i>
         </div>
     </nav>
 
-    <div class="bg-gray-100  ">
+    <div class="">
         <form action=""
-            class="bg-white w-110 max-xl:w-100 max-lg:w-90 max-md:80 max-sm:w-75
+            class="bg-white/40 w-110 max-xl:w-100 max-lg:w-90 max-md:80 max-sm:w-75
             rounded-xl px-2.5 py-10 shadow-lg border border-gray-300  flex flex-col items-center gap-5 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] ">
-            <h1 class="font-semibold text-xl max-md:text-lg max-sm:text-sm">
+            <h1 class="font-bold text-xl max-md:text-lg max-sm:text-sm">
                 Create an account. Easy and simple
             </h1>
 
-            <div class="flex flex-col items-center gap-5 m-2 box-border">
-                <input class="border  p-2 text-xl rounded-xl border-gray-700 shadow-md
+            <div class=" flex flex-col items-center gap-5 m-2 box-border">
+                <input class="border bg-white px-2 py-0.5 text-lg rounded-xl border-gray-700 shadow-md
                     w-105 max-xl:w-95 max-lg:w-85 max-md:75 max-sm:w-70" type="text" placeholder="Username">
 
-                <input class="border  p-2 text-xl rounded-xl border-gray-700 shadow-md
+                <input class="border bg-white px-2 py-0.5 text-lg rounded-xl border-gray-700 shadow-md
                     w-105 max-xl:w-95 max-lg:w-85 max-md:75 max-sm:w-70" type="email"
                     placeholder="youremail@gmail.com">
 
-                <input class="border  p-2 text-xl rounded-xl border-gray-700 shadow-md
+                <input class="border bg-white px-2 py-0.5 text-lg rounded-xl border-gray-700 shadow-md
                     w-105 max-xl:w-95 max-lg:w-85 max-md:75 max-sm:w-70" type="password" placeholder="Password">
             </div>
             <button class="bg-blue-500 w-full p-1.5 text-xl text-white/85 rounded-xl">
-                <a href="profile.html">
+                <a href="home.html">
                     Sign Up
                 </a>
 
@@ -78,6 +77,7 @@
             </p>
         </form>
     </div>
+    
 </body>
 
 </html>

@@ -8,81 +8,199 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
+    <style>
+    /* For WebKit browsers (Chrome, Safari, Opera, new Edge) */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* For IE, Edge, and Firefox */
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+  </style>
 </head>
 
-<body>
-    <nav class="py-4 px-5  flex justify-between bg-indigo-400">
+<body class="bg-gray-50">
+    <nav class="sticky top-0 w-full py-2 px-5 flex items-center justify-between bg-indigo-400">
         <div class="flex items-center gap-2 hover:cursor-pointer">
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-1 animate-spin">
                 <div class=" flex gap-1">
-                    <div class="h-3 w-3 bg-white"></div>
-                    <div class="h-3 w-3 bg-red-400"></div>
+                    <div class="h-2 w-2 bg-white"></div>
+                    <div class="h-2 w-2 bg-red-400"></div>
                 </div>
                 <div class="flex gap-1">
-                    <div class="h-3 w-3 bg-blue-400"></div>
-                    <div class="h-3 w-3 bg-green-400"></div>
+                    <div class="h-2 w-2 bg-blue-400"></div>
+                    <div class="h-2 w-2 bg-green-400"></div>
                 </div>
             </div>
-            <h1 class="text-3xl font-bold">
+            <h1 class="text-xl font-bold">
                 Thoi'sStore
             </h1>
 
         </div>
-        <div class="flex items-center gap-12 text-white/90 text-lg ">
+        <div class="flex items-center gap-12 text-white/90 text-sm max-md:hidden">
             <a class="hover:text-blue-700" href="">Home</a>
             <a class="hover:text-blue-700" href="">Product</a>
             <a class="hover:text-blue-700" href="">About</a>
             <a class="hover:text-blue-700" href="">Services</a>
             <a href="">
-                <img class="w-12 h-10 object-cover rounded-full"
-                    src="https://static.vecteezy.com/system/resources/thumbnails/029/271/062/small/avatar-profile-icon-in-flat-style-male-user-profile-illustration-on-isolated-background-man-profile-sign-business-concept-vector.jpg"
+                <img class="w-8 h-8 object-cover rounded-full"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX-zvTFx8Q-MFBl2cODEEGijN9_9qGuZZqfw&s"
                     alt="">
             </a>
         </div>
+        <div class="hidden max-md:block text-md text-white/90">
+            <i class=" fa-solid fa-bars "></i>
+        </div>
     </nav>
-    
 
-    <footer class="flex justify-around relative bottom-0 px-5 py-10 bg-slate-500 w-full text-white/80">
-        <div>
-            <h1 class="text-2xl">
-                Contact Us on:
-            </h1>
-            <div class="flex flex-col text-lg ">
-                <h2>Phone: +xx xxxxxxxxxx</h2>
-                <p>email: thoi@gmail.com</p>
 
-                <div class="text-xl">
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-telegram"></i>
-                    <i class="fa-brands fa-twitter"></i>
+    <div class="flex flex-col justify-center">
+         <div class="hidden max-sm:block text-2xl text-black/90 pt-6 fixed top-9 left-1">
+            <i class=" fa-solid fa-bars "></i>
+        </div>
+
+        <section class="max-sm:hidden 
+        fixed top-0 -z-10 bg-yellow-600 h-dvh w-30 p-3 flex flex-col justify-between pt-22">
+            <div class="text-white flex flex-col gap-4 text-lg">
+                <a class="" href="">
+                    <i class="fa-solid fa-list-check"></i>
+                    Manage</a>
+                <a href="">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    History</a>
+                <a href="">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+
+                </a>
+                <a href="">
+                    <i class="fa-regular fa-envelope"></i>
+                    inbox</a>
+            </div>
+            <div class=" flex flex-col pb-2 gap-1 font-semibold text-white">
+                <a href="">
+                    <i class="fa-solid fa-gear"></i>
+                    Setting</a>
+                <a href=""><i class="fa-solid fa-right-from-bracket rotate-180"></i>Log Out</a>
+            </div>
+        </section> 
+
+        <header class="max-sm:ml-0 max-sm:items-center max-sm:text-center
+        ml-36 pt-10 pb-3 flex flex-col ">
+            <div class="px-10">
+                
+                    <img 
+                    class="w-35 h-35 rounded-full object-cover max-sm:mx-auto"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX-zvTFx8Q-MFBl2cODEEGijN9_9qGuZZqfw&s"
+                        alt="">
+                    <h1 class="text-xl font-semibold">
+                        Heikham Jackson
+                    </h1>
+                    <p class="">
+                        jacksonheikham@gmail.com
+                    </p>
+                
+                
+                    <h2 class="text-xl font-semibold">
+                        Bio:
+                    </h2>
+                    <p class="w-60 text-md ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus facilis veniam magni
+                        neque.
+                    </p>
+            </div>
+        </header>
+           
+        <section class=" ml-36  pb-10
+        max-sm:ml-0 max-sm:mx-3">
+                <h1 class="px-10 py-4 text-xl font-semibold
+                max-sm:text-center">
+                    Recently studied:
+                </h1>
+                <div class="px-3 max-sm:ml-6 overflow-x-scroll hide-scrollbar flex gap-5 ">
+                    <!-- card -->
+                    <div
+                        class="min-w-55 text-sm 
+                        p-2 border-2 shadow-lg border-gray-300  bg-gray-100 flex flex-col object-cover items-center text-center rounded-xl">
+                        <img 
+                        class="h-24 min-h-12 " 
+                        src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png"
+                            alt="">
+                        <p class="">
+                            HTML (HyperText Markup Language) is the standard markup language for creating and
+                            structuring content on the World Wide Web.
+                        </p>
+                    </div>
+                    <!-- card -->
+                    <div
+                        class="min-w-55 text-sm p-2 border-2 shadow-lg border-gray-300  bg-gray-100 flex flex-col object-cover items-center text-center rounded-xl">
+                        <img class="h-24 min-h-12 " 
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/250px-CSS3_logo_and_wordmark.svg.png"
+                            alt="">
+                        <p class="">
+                           CSS stands for Cascading Style Sheets, a style sheet language used to describe the presentation and visual formatting of a document written in HTML or XML
+                        </p>
+                    </div>
+                    <!-- card -->
+                    <div
+                        class="min-w-55 text-sm p-2 border-2 shadow-lg border-gray-300  bg-gray-100 flex flex-col object-cover items-center text-center rounded-xl">
+                        <img class="h-24 min-h-12 " 
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeoFVvSAWeFzxYzWTFsDhxojJAxLQS_FqdQ&s"
+                            alt="">
+                        <p class="">
+                            HTML (HyperText Markup Language) is the standard markup language for creating and
+                            structuring content on the World Wide Web.
+                        </p>
+                    </div>
+                    <!-- card -->
+                    <div
+                        class="min-w-55 text-sm p-2 border-2 shadow-lg border-gray-300  bg-gray-100 flex flex-col object-cover items-center text-center rounded-xl">
+                        <img class="h-24 min-h-12 " src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png"
+                            alt="">
+                        <p class="">
+                            HTML (HyperText Markup Language) is the standard markup language for creating and
+                            structuring content on the World Wide Web.
+                        </p>
+                    </div>
+                    <!-- card -->
+                    <div
+                        class="min-w-55 text-sm p-2 border-2 shadow-lg border-gray-300  bg-gray-100 flex flex-col object-cover items-center text-center rounded-xl">
+                        <img class="h-24 min-h-12 " src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png"
+                            alt="">
+                        <p class="">
+                            HTML (HyperText Markup Language) is the standard markup language for creating and
+                            structuring content on the World Wide Web.
+                        </p>
+                    </div>
+                    <!-- card -->
+                    <div
+                        class="min-w-55 text-sm p-2 border-2 shadow-lg border-gray-300  bg-gray-100 flex flex-col object-cover items-center text-center rounded-xl">
+                        <img class="h-24 min-h-12 " src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png"
+                            alt="">
+                        <p class="">
+                            HTML (HyperText Markup Language) is the standard markup language for creating and
+                            structuring content on the World Wide Web.
+                        </p>
+                    </div>
+                    <!-- card -->
+                    <div
+                        class="min-w-55 text-sm p-2 border-2 shadow-lg border-gray-300  bg-gray-100 flex flex-col object-cover items-center text-center rounded-xl">
+                        <img class="h-24 min-h-12 " src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png"
+                            alt="">
+                        <p class="">
+                            HTML (HyperText Markup Language) is the standard markup language for creating and
+                            structuring content on the World Wide Web.
+                        </p>
+                    </div>
+
+
                 </div>
-            </div>
-        </div>
-        <div>
-            <h1 class="text-2xl">
-                Address
-            </h1>
-            <div>
-                <p class="text-lg ">
-                    Khurkhul Makha Leikai, Mantripukhri,<br> Imphal-West, pin-795002,<br> Manipur, India
-                </p>
-            </div>
-        </div>
-        <div>
-            <h1 class="text-2xl">
-                Company
-            </h1>
-            <div class="text-lg">
-                <p>
-                    Terms And Condition
-                </p>
-                <p>
-                    Privacy and Policies
-                </p>
-            </div>
-        </div>
-    </footer>
+            
+        </section>
+    </div>
 </body>
 
 </html>
