@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Expenses Tracker</title>
+</head>
+<body>
+  
+  <header class="grid grid-cols-3 p-5 max-w-3xl mx-auto gap-3">
+    <div class="bg-gray-300 flex justify-center flex-col items-center p-5 rounded-lg">
+      <h1 id="balance" class="font-semibold text-lg">₹5000</h1>
+      <p class="text-sm text-gray-600">Balance</p>
+    </div>
+    <div class="bg-gray-300 flex justify-center flex-col items-center p-5 rounded-lg">
+      <h1 id="credit" class="font-semibold text-lg">₹2000</h1>
+      <p class="text-sm text-gray-600">Credit</p>
+    </div>
+    <div class="bg-gray-300 flex justify-center flex-col items-center p-5 rounded-lg">
+      <h1 id="debit" class="font-semibold text-lg">₹3000</h1>
+      <p class="text-sm text-gray-600">Debit</p>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-3xl p-5 grid sm:grid-cols-2 gap-5">
+    <form onsubmit="handleSubmit(event)" class="space-y-2">
+      <h1>Add New Transaction</h1>
+      <!-- amount -->
+      <div>
+        <label for="amount" class="text-sm text-gray-500 font-semibold">Amount</label>
+        <input 
+          id="amount"
+          type="number"
+          name="amount"
+          placeholder="Amount"
+          required
+          class="bg-gray-300 block w-full p-3 rounded-lg"
+        />
+      </div>
+  
+      <!-- remark -->
+      <div>
+        <label for="remark" class="text-sm text-gray-500 font-semibold">Remark</label>
+        <input 
+          id="remark"
+          name="remark"
+          type="text"
+          placeholder="Remark"
+          class="bg-gray-300 block w-full p-3 rounded-lg"
+        />
+      </div>
+      
+      <!-- credit / debit -->
+      <div>
+        <p class="text-sm text-gray-500 font-semibold mb-2">Action</p>
+  
+        <div class="flex gap-5">
+          <div class="flex items-center gap-2">
+            <input 
+              id="creditInput"
+              type="radio"
+              name="action"
+              value="credit"
+            />
+            <label for="creditInput" class="text-sm text-gray-500 font-semibold">Credit</label>
+          </div>
+    
+          <div class="flex items-center gap-2">
+            <input 
+              id="debitInput"
+              type="radio"
+              name="action"
+              value="debit"
+            />
+            <label for="debitInput" class="text-sm text-gray-500 font-semibold">Debit</label>
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit" class="bg-blue-500 text-white mt-3 w-full h-10 rounded-lg">
+        Submit
+      </button>
+    </form>
+
+
+    <section class="w-full space-y-3">
+      <h1>Transaction History</h1>
+
+      <div id="transactionsContainer" class="space-y-3 ">
+        
+      </div>
+    </section>
+  </main>
+
+
+
+  <script>
+    // dummy transactions data
+    const transactions = [
+      {amount: 20, remark: "From Alex", action: "credit", createdAt: 1771345607093},
+      {amount: 50, remark: "Transfer to John", action: "debit", createdAt: 1771345537094},
+      {amount: 10, remark: "Gift", action: "credit", createdAt: 1771345477095},
+      {amount: 60, remark: "Groceries", action: "debit", createdAt: 1771345417096},
+      {amount: 100, remark: "Salary", action: "credit", createdAt: 1771345397097},
+      {amount: 30, remark: "Electricity Bill", action: "debit", createdAt: 1771345388098},
+      {amount: 40, remark: "From Sam", action: "credit", createdAt: 1771345387099},
+    ];
+    // find total credit and debit from transactions
+    function findTotals() {
+      return transactions.reduce((acc, curr) => {
+        if (curr.action == "credit") {
+          const credit = acc.totalCredit + parseInt(curr.amount)
+          return {totalCredit: credit, totalDebit: acc.totalDebit}
+        } else {
+          const debit = acc.totalDebit + parseInt(curr.amount)
+          return {totalCredit: acc.totalCredit, totalDebit: debit}
+        }
+      }, {totalCredit: 0, totalDebit: 0})
+    }
+
+    // update balance, credit and debit states in header
+    function updateStates() {
+      const balance = document.getElementById("balance"); 
+      const credit = document.getElementById("credit"); 
+      const debit = document.getElementById("debit"); 
+
+      const totals = findTotals();
+      balance.innerText = `₹${totals.totalCredit - totals.totalDebit}`;
+      credit.innerText = `₹${totals.totalCredit}`;
+      debit.innerText = `₹${totals.totalDebit}`;
+
+      if (totals.totalCredit - totals.totalDebit < 0) {
+        balance.classList.add("text-red-600");
+      } else {
+        balance.classList.remove("text-red-600");
+      }
+    }
+
+    // initial update states on page load
+    updateStates();
+
+    // render transactions in transaction history section
+    const transactionsContainer = document.getElementById("transactionsContainer");
+    for (let i = 0; i < transactions.length; i++) {
+      transactionsContainer.innerHTML += `
+        <div class="bg-gray-200 w-full p-5 rounded-lg flex justify-between">
+          <div>
+            <p class="text-gray-600">${transactions[i].remark}</p>
+            <p class="text-gray-600 text-xs">${new Date(transactions[i].createdAt).toLocaleString()}</p>
+          </div>
+
+          <h1 class="font-semibold ${transactions[i].action == "credit" ? "text-green-600" : "text-red-600"}">
+            ${transactions[i].action == "credit" ? "+ " : "- "} ${transactions[i].amount}
+          </h1>
+        </div>
+      `;
+    }
+
+    // handle form submit and add new transaction to transactions array and update the transaction history section
+    function handleSubmit(e) {
+      // prevent default form submission behavior
+      e.preventDefault();
+      
+      // get form values
+      const amount = e.target.amount.value;
+      const remark = e.target.remark.value;
+      const action = e.target.action.value;
+      
+      // add new transaction to transactions array
+      transactions.unshift({amount, remark, action, createdAt: new Date().getTime()});
+
+      // update transaction history section with new transaction
+      transactionsContainer.innerHTML = ``;
+      for (let i = 0; i < transactions.length; i++) {
+        transactionsContainer.innerHTML += `
+          <div class="bg-gray-200 w-full p-5 rounded-lg flex justify-between">
+            <div>
+              <p class="text-gray-600">${transactions[i].remark}</p>
+              <p class="text-gray-600 text-xs">${new Date(transactions[i].createdAt).toLocaleString()}</p>
+            </div>
+            
+            <h1 class="font-semibold ${transactions[i].action == "credit" ? "text-green-600" : "text-red-600"}">
+              ${transactions[i].action == "credit" ? "+ " : "- "} ${transactions[i].amount}
+            </h1>
+          </div>
+        `;
+      }
+      
+      // reset form fields
+      e.target.reset();
+
+      // update balance, credit and debit states in header
+      updateStates();
+      console.log(transactions);
+      
+    }
+    
+
+  </script>
+</body>
+</html>

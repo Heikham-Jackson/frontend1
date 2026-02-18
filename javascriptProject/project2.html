@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Transaction
+    </h2>
+    <form onsubmit="onSubmit(event)" class="flex flex-col items-center w-fit p-3 gap-2 bg-slate-300">
+        
+        
+            <input 
+            id="amount"
+            name="amount"
+            class="bg-white px-1 rounded-md border border-gray-500"
+            type="number" 
+            required
+            placeholder="Amount"
+            />
+            
+            <input 
+            id="about"
+            name="about"
+            class="bg-white px-1 rounded-md border border-gray-500"
+            type="text"
+            required 
+            placeholder="Remark"
+            />
+
+            
+            <select 
+            name="options" 
+            id="options" 
+            class=
+            "bg-white px-1 w-full rounded-md border
+             border-gray-500"
+            >
+                <option 
+                name="debit"
+                value="debit"> 
+                    
+                        Debit card
+                    
+                </option>
+                <option 
+                name="credit"
+                value="credit" 
+                >
+                 
+                    Credit Card
+                
+                </option>
+                
+
+            </select>
+            <button 
+            type="submit"
+            class="bg-white text-blue-500 rounded-md px-1 relative left-[50%] translate-x-[-50%]">
+                Submit
+            </button>
+        
+
+    </form>
+
+    <section id="transactionDetails" 
+    class="my-10  flex flex-col gap-3 ">  
+        
+    </section>
+
+
+    <script>
+        const transactionHistory =[];
+
+        const transactionDetails = document.getElementById("transactionDetails");
+
+        function onSubmit(e){
+            e.preventDefault();
+            const transactionData = e.target;
+
+            const amount = transactionData.amount.value;
+            const about = transactionData.about.value;
+            const options = transactionData.options.value;
+            
+           transactionHistory.push = {
+            amount : transactionData.amount.value,
+            about : transactionData.about.value,
+            options : transactionData.options.value
+
+           }
+           console.log(transactionHistory);
+           
+            
+
+            transactionDetails.innerHTML += `
+            <div class="p-1 flex flex-col gap-3 border w-fit rounded-md bg-slate-200"">
+            <div class="flex gap-5 border w-fit px-1 py-2 rounded-md ">
+        <p class="bg-white px-1 rounded-md">
+            ${about}
+        </p>
+        <h5 class="${options.value == "options.debit" ?  " text-red-500 ":" text-green-500 " }
+        flex font-semibold bg-white px-1 rounded-md">
+            ${amount}
+            
+        </h5>  
+         <p class="font-semibold bg-white px-1 rounded-md">
+             ${options}
+            </p> 
+        </div>
+        <button onclick="removed" class=" border border-black hover:bg-slate-300 w-full box-border rounded-md text-red-600">
+            Remove
+        </button>
+        </div>
+            `;
+        }
+        
+
+        function removed(id){
+            const remove = transactionHistory.findIndex(remove => remove !== id)
+            transactionHistory.slice(remove, 1);
+            
+        }
+
+    </script>
+</body>
+</html>

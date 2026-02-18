@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Cart</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  
+  <!-- product caontainer -->
+  <h1 class="text-3xl text-center font-bold my-5">Products: </h1>
+  <section id="container" class="flex flex-col items-center gap-5 justify-center">
+
+  </section>
+
+
+  <!-- cart container -->
+  <h1 class="text-center my-5">Your Cart</h1>
+  <section id="cartContainer" class="flex flex-col items-center gap-5 justify-center">
+
+  </section>
+
+
+
+
+  <script>
+    // product data
+    const products = [
+      {
+        id: 1,
+        name: "iPhone 14 Pro Max",
+        price: 120000
+      },
+      {
+        id: 2,
+        name: "Samsung Galaxy S23 Ultra",
+        price: 110000
+      },
+      {
+        id: 3,
+        name: "OnePlus 11 Pro",
+        price: 90000
+      }
+    ];
+
+    // render all the products
+    const container = document.getElementById("container");
+    for (let i = 0; i < products.length; i++) {
+      container.innerHTML += `
+        <div class="bg-gray-700 text-white p-5 w-80">
+            <h1>${products[i].name}</h1>
+            <h1>ID: ${products[i].id}</h1>
+            <p>Price : ₹${products[i].price}</p>
+            <button onclick="addToCart(${products[i].id})" class="bg-gray-300 text-black w-full">Add to Cart</button>
+        </div>  
+      `;
+    }
+
+    // empty cart
+    const cart = [];
+    
+    // add product to cart using ID
+    function addToCart(id) {
+      const product = products.find(product => product.id == id);
+      cart.push(product);
+      
+      viewCart();
+    }
+
+    // render the current cart information
+    function viewCart() {
+      const cartContainer = document.getElementById("cartContainer");
+      cartContainer.innerHTML = ``;
+      for (let i = 0; i < cart.length; i++) {
+        cartContainer.innerHTML += `
+          <div class="bg-gray-700 text-white p-5 w-80">
+            <h1>${cart[i].name}</h1>
+            <h1>ID: ${cart[i].id}</h1>
+            <p>Price : ₹${cart[i].price}</p>
+            <button onclick="removeCart(${cart[i].id})"class="bg-gray-300 text-black w-full">Remove</button>
+
+          </div>
+        `;
+      } 
+    }
+
+    function removeCart(id){
+      const remove = cart.findIndex(remove => remove.id !== id);
+      cart.splice(remove, 1);
+      viewCart();
+    }
+    
+  </script>
+</body>
+</html>

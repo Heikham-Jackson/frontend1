@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Light</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <nav class="flex justify-between items-center p-5 bg-slate-500">
+    <h1>Traffic</h1>
+    <button onclick="asideOpenClose()" class="bg-slate-800 w-10 h-10 text-white">=</button>
+
+    <aside id="aside" class="fixed top-0 -left-0 -left-60 bg-slate-800 h-full w-60 text-white transition-all duration-500">
+      Aside
+    </aside>
+  </nav>
+
+
+  <h1 class="text-center text-xl my-10">Traffic Light using JavaScript</h1>
+
+  <div class="flex gap-5 items-center justify-center">
+    <div id="redLight" class="h-16 w-16 rounded-full bg-gray-200"></div>
+    <div id="yellowLight" class="h-16 w-16 rounded-full bg-gray-200"></div>
+    <div id="greenLight" class="h-16 w-16 rounded-full bg-gray-200"></div>
+  </div>
+
+  <div class="flex gap-3 justify-center mt-20">
+    <button onclick="lightOn('stop')" class="bg-gray-400 w-20">Stop</button>
+    <button onclick="lightOn('ready')" class="bg-gray-400 w-20">Ready</button>
+    <button onclick="lightOn('go')" class="bg-gray-400 w-20">Go</button>
+  </div>
+
+
+  <script>
+    function asideOpenClose() {
+      const aside = document.getElementById("aside"); 
+      aside.classList.toggle("-left-60");
+    }
+
+
+
+    function lightOn(action) {
+      const redLight = document.getElementById("redLight"); // bg-red-500
+      const yellowLight = document.getElementById("yellowLight"); // bg-yellow-500
+      const greenLight = document.getElementById("greenLight"); // bg-green-500
+
+      // turn off all the lights
+      redLight.classList.replace("bg-red-500", "bg-gray-200");
+      yellowLight.classList.replace("bg-yellow-500", "bg-gray-200");
+      greenLight.classList.replace("bg-green-500", "bg-gray-200");
+
+      // turn on a light
+      if (action === "stop") {
+        redLight.classList.replace("bg-gray-200", "bg-red-500");
+      } 
+      else if (action === "ready") {
+        yellowLight.classList.replace("bg-gray-200", "bg-yellow-500");
+      } 
+      else if (action === "go") {
+        greenLight.classList.replace("bg-gray-200", "bg-green-500");
+      }
+    }
+
+    lightOn("stop");
+    
+  </script>
+</body>
+</html>
