@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="m-2">
+    <h1>
+        Quiz
+    </h1>
+    <form action="">
+    <section id="materialContainer" class="bg-emerald-200 p-3 w-full flex flex-col">
+
+        
+    </section>
+    </form>
+
+    <section id="resultContainer">
+        
+    </section>
+
+
+    <script>
+        const material = [
+            {
+                qIid1: "q1opt1",
+                qIid2: "q1opt2",
+                qIid3: "q1opt3",
+                qIid4: "q1opt4",
+                
+                Iname: "q1ans",
+
+                id: "Q1",
+                id1: "What is the fastest land Animal?",
+                
+                ansopt1: "Cheeta",
+                ansopt2: "LIon",
+                ansopt3: "Rabbit",
+                ansopt4: "Leopard"
+            },
+            {
+                qIid1: "q2opt1",
+                qIid2: "q2opt2",
+                qIid3: "q2opt3",
+                qIid4: "q2opt4",
+
+                Iname: "q2ans",
+                
+                id: "Q2",
+                id1: "What does GPU stand for in computer science?",
+                
+                ansopt1: "Ground Power Unit",
+                ansopt2: "Gas Processing Unit",
+                ansopt3: "Graphics Processing Unit",
+                ansopt4: "General Postal Union"
+            }
+        ];
+
+       
+       
+
+
+        const materialContainer = document.getElementById("materialContainer");
+        for(let i=0; i<material.length ; i++)
+        materialContainer.innerHTML += `
+            <div class="flex gap-1 font-semibold">
+                <p>${material[i].id}</p>
+                <p>
+                    ${material[i].id1}
+                </p>
+            </div>
+            <div class="">
+                <p>
+                    Ans:
+                </p>
+                <div id="${material[i].Iname}" class="flex gap-5 px-10">
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <input id="${material[i].qIid1}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt1}">
+                            <label for="${material[i].qIid1}">${material[i].ansopt1}</label>
+                        </div>
+                        <div>
+                            <input id="${material[i].qIid2}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt2}">
+                            <label for="${material[i].qIid2}">${material[i].ansopt2}</label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <input id="${material[i].qIid3}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt3}">
+                            <label for="${material[i].qIid3}">${material[i].ansopt3}</label>
+                        </div>
+                        <div>
+                            <input id="${material[i].qIid4}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt4}">
+                            <label for="${material[i].qIid4}">${material[i].ansopt4}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <button onclick="submit(${material[i].Iname})" class="bg-blue-500 px-1 rounded-lg  w-fit">
+                Submit
+                </button>
+        </div>
+        `;
+
+        const resultIn = [];
+
+        console.log(resultIn);
+
+        function submit(id){
+            const Result = material.find(Result => Result.id == id);
+            resultIn.push(Result);
+            resultOut();
+        }
+        
+        
+    
+        function resultOut(){
+            const resultContainer = document.getElementById("resultOut");
+             resultOut.innerHTML +=``;
+            for(let i=0 ; i< material.length ; i++)
+            resultOut.innerHTML +=`
+            <div class="flex gap-1 font-semibold">
+                <p>${material[i].id}</p>
+                <p>
+                    ${material[i].id1}
+                </p>
+            </div>
+            <div class="">
+                <p>
+                    Ans:
+                </p>
+                <div id="${material[i].Iname}" class="flex gap-5 px-10">
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <input id="${material[i].qIid1}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt1}">
+                            <label for="${material[i].qIid1}">${material[i].ansopt1}</label>
+                        </div>
+                        <div>
+                            <input id="${material[i].qIid2}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt2}">
+                            <label for="${material[i].qIid2}">${material[i].ansopt2}</label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <input id="${material[i].qIid3}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt3}">
+                            <label for="${material[i].qIid3}">${material[i].ansopt3}</label>
+                        </div>
+                        <div>
+                            <input id="${material[i].qIid4}" name="${material[i].Iname}" type="radio" value="${material[i].ansopt4}">
+                            <label for="${material[i].qIid4}">${material[i].ansopt4}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        `;
+        }
+     
+
+
+
+    </script>
+</body>
+
+</html>

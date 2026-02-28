@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reduce Method</title>
+</head>
+<body>
+  
+
+  <script>
+    // dummy transactions data
+    const transactions = [
+      {amount: 20, action: "credit"},
+      {amount: 50, action: "debit"},
+      {amount: 10, action: "credit"},
+      {amount: 60, action: "debit"},
+      {amount: 100, action: "credit"},
+      {amount: 30, action: "debit"},
+      {amount: 40, action: "credit"},
+    ];
+
+    // find total credit and debit from transactions // number (10,100..) // {key: value, key: value} eg - {totalCredit: 170, totalDebit: 140}
+    function findTotals() {
+
+      return transactions.reduce((acc, transaction) => {
+        let {totalCredit, totalDebit} = acc;
+
+        if (transaction.action == "credit") {
+          totalCredit += parseInt(transaction.amount)
+        } else {
+          totalDebit += parseInt(transaction.amount)
+        }
+
+        return {totalCredit, totalDebit}
+
+      }, {totalCredit: 0, totalDebit: 0})
+      
+    }
+
+    console.log(findTotals());
+    
+
+  </script>
+</body>
+</html>

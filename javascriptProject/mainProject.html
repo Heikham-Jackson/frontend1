@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+</head>
+<style>
+        /* For WebKit browsers (Chrome, Safari, Opera, new Edge) */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For IE, Edge, and Firefox */
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
+<body class="bg-gray-50">
+    <nav class="bg-slate-600 text-white flex items-center justify-between py-3 px-4">
+        <h1 class="text-2xl font-bold">
+            Company
+        </h1>
+        <div class="bg-white rounded-full flex">
+            <input type="search" class="bg-white  rounded-l-full  text-black py-1 px-2
+         max-[600px]:w-20 max-[400px]:block" placeholder="Search" />
+            <button class="  rounded-r-full bg-red-100 px-2 py-1 text-black
+        max-[400px]:rounded-full ">
+                <i class="fa-solid fa-search"></i>
+            </button>
+        </div>
+        <div class="text-sm flex gap-4 
+          max-sm:text-2.5 max-[400px]:gap-1 max-[400px]:hidden">
+            <a href="#" class="">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Help</a>
+            <div class="text-md max-md:hidden flex gap-4">
+                <a href="#" class="max-lg:hidden">Sell Products</a>
+                <a href="#" class="max-lg:hidden">Return & Order</a>
+                <a href="#" class="max-lg:hidden">Refund & Policies</a>
+                <a href="#">
+                    <i class="fa-solid fa-shopping-cart"></i>
+                </a>
+                <a href="#">Log In</a>
+            </div>
+
+        </div>
+        <button class="hidden max-md:block">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="px-3 py-10 text-xl font-semibold flex items-center justify-center bg-linear-to-b from-slate-300 to-b-slate-50
+    max-sm:flex-col max-sm:text-center ">
+        
+        <div>
+            <h1>
+            30% off/- Today's<br>
+            Best selling Electronic.
+        </h1>
+        <button class="border my-2 px-1 rounded-md bg-yellow-400">
+            Buy Now
+        </button>
+        </div>
+        <img class="w-60" src="https://alphaswift.com/_next/image?url=%2Fimages%2Feft-e616%2Fmain.png&w=1200&q=75"
+            alt="">
+    </header>
+
+    <section class="px-3">
+            <h1 class="py-5 font-bold text-2xl">
+                Best Selling Electronics
+            </h1>
+            
+
+            <div id="electronicsCardRender" 
+            class="grid grid-flow-col overflow-x-scroll hide-scrollbar gap-4"> 
+                
+                    
+                    
+            </div>
+    </section>
+
+    <section class="p-3 mt-1">
+        <h1 class="text-2xl font-semibold py-5">
+            Listen to Audiobooks more than 100k+ stories.
+        </h1>
+        <div id="audioBooksCard" 
+        class="grid grid-flow-col grid-cols-4 gap-3
+        max-sm:grid-cols-2 max-sm:grid-flow-row place-items-center">
+             
+        </div>
+    </section>
+
+    <footer class=" pb-2 bg-gray-700 text-white/70 ">
+        <div class="px-4 py-8 grid grid-flow-col grid-cols-3 gap-5 place-items-center 
+        max-sm:grid-flow-row max-sm:grid-cols-1 ">
+            <div class="text-center">
+                <h2 class="text-xl text-white pb-3">
+                    Connect us with:
+                </h2>
+                <div class="flex flex-col gap-1 text-sm">
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                    Facebook
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-twitter"></i>
+                    Twitter
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-google"></i>
+                    Gmail
+                </a>
+
+                <a href="">
+                     <i class="fa-brands fa-telegram"></i>
+                    Telegram
+                </a>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h2 class="text-xl text-white pb-3">
+                    Company Policies
+                </h2>
+                <div class="flex flex-col gap-1 text-sm">
+                    <a href="#">
+                        Terms and Condition
+                    </a>
+                    <a href="#">
+                        Privacy policy
+                    </a>
+                    <a href="#">
+                        Selling policy
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <h2 class="text-xl text-white pb-3">
+                    Let Us Help You
+                </h2>
+                <div class="flex flex-col gap-1 text-sm">
+                    <a href="#">
+                        Your Account
+                    </a>
+                    <a href="#">
+                        Return Center
+                    </a>
+                    <a href="#">
+                        Recalls and Product Safety Alerts
+                    </a>
+                    <a href="#">
+                        100% Purchase Protection
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="text-center bg-gray-900 text-white/80 pt-4 pb-8">
+        <h1 class="text-xl font-bold">
+            Subscribe to our Newsletter and <br>Stay upto date
+        </h1>
+        <div class="p-3 flex justify-center items-center gap-3
+        max-[450px]:flex-col">
+            <button class="border border-white px-2 py-0.5 rounded-md bg-gray-800">
+                Subscribe
+            </button>
+            <div class="relative">
+            <input
+            class="bg-white text-black px-1.5 py-0.5 rounded-md" 
+            type="email"
+            placeholder="youremail@gmail.com">
+            <i class="fa-solid fa-paper-plane absolute text-sm -translate-x-[calc(100%+20%)] translate-y-[50%] text-black/80"></i>
+            </div>
+        </div>
+        
+        <h1 class="bg-gray-900 text-center border-b mx-auto w-fit pt-5
+        max-[400px]:text-[8px]">
+            © 1996-2026, Company.com, Inc. or its affiliates
+        </h1>
+    </footer>
+
+    <script>
+        const electronicsCardRender = document.getElementById("electronicsCardRender");
+        for(let i=0; i<7; i++){
+            electronicsCardRender.innerHTML +=`
+            <div class="relative min-w-45  max-w-70 p-3 bg-white border border-gray-300 shadow-md shadow-gray-300 rounded-lg
+                ">
+                    <img 
+                    src="https://alphaswift.com/_next/image?url=%2Fimages%2Feft-e616%2Fmain.png&w=1200&q=75" 
+                    alt="">
+                    <h1 class="font-semibold pt-2">
+                        Name
+                    </h1>
+                    <h3 class="absolute w-8 h-8 text-center top-2 bg-green-600 py-1.5 px-0.5 text-[8px] text-white rounded-full">
+                        SAVE <br>20%
+                    </h3>
+                    <i class="fa-solid fa-heart text-lg  text-gray-400 rounded-full absolute right-2 top-2"></i>
+
+                    <div class="flex text-sm gap-2">
+                    <h2 class="italic pb-1">
+                        Rs. <span class="line-through font-light">60,000</span>
+                    </h2>
+                    <h2 class="text-green-600">
+                        48,000
+                    </h2>
+                    </div>
+                    <p class="text-sm pb-2">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    </p>
+                    <div class="flex justify-between">
+                        <button class="border text-sm px-1 rounded-md bg-yellow-500">
+                            Buy Now
+                        </button>
+                        <button class="border text-sm px-1 rounded-md border border-yellow-500">
+                            Add to Cart    
+                        </button>
+                    </div>    
+                </div>`;
+        }
+        
+        const audioBooksCard = document.getElementById("audioBooksCard");
+        for(let i=0; i<4; i++){
+            audioBooksCard.innerHTML+=`
+            <div class="min-w-25 max-w-60 p-2.5 rounded-lg bg-white border border-gray-300 shadow-md">
+                <img 
+                class="  object-cover  rounded-md"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8DFHvOeY-9tkaTIrPI2HMFLTuBuLuzQnARg&s" 
+                alt="">
+                <h1 class="font-semibold text-lg ">
+                    Name
+                </h1>
+                <p class="text-sm py-1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit....
+                </p>
+            </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

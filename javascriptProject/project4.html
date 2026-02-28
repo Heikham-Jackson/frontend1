@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+
+</head>
+<body>
+    <nav class="bg-[#373737] text-white p-5 flex justify-evenly">
+        <a href="#collection" onclick="update('load')">collection</a>
+        <a href="#casting" onclick="update('view')">casting</a>
+    </nav>
+
+
+        <div id="hero">
+
+        </div>
+    <script>
+
+
+       
+        function update(page){
+       const hero=document.getElementById("hero")
+            if(page==="load")
+            {
+                hero.innerHTML=`
+                                <form action="" class="flex flex-col w-90 mx-auto items-center">
+                    <input type="text"               
+                    name="title"
+                     id="title"
+                     placeholder="item name"
+                     required
+                    />
+                       <input type="number"               
+                    name="price"
+                     id="price"
+                     placeholder="item price"
+                     required
+                    />
+                       <input type="number"               
+                    name="discount"
+                     id="discount"
+                     placeholder="item discount"
+                     required
+                    />
+
+                       <textarea 
+                       name="title"
+                     id="title"
+                     placeholder="item name"
+                     required>                            
+                    </textarea> 
+
+
+
+                </form>
+                `
+            }
+            else if(page==="view")
+            {
+                    hero.innerHTML=`
+                    <div>
+        <h1>title</h1>
+        <h1>amount</h1>
+        <h1>discount</h1>
+        <h1>description</h1>
+    </div>
+                    `
+
+            }
+
+        }
+        
+    </script>
+    
+</body>
+</html>

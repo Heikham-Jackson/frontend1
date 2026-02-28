@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+  <h1>API Fetch</h1>
+  <h1>Get Method</h1>
+
+  <section id="batchContainer" class="grid gap-5 w-90 mx-auto p-5">
+    
+  </section>
+
+  <section id="productsContainer" class="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-5 w-full mx-auto p-5">
+    
+  </section>
+
+  <script>
+    
+    // const data = {
+    //   "success": true,
+    //   "message": "Batches fetched successfully",
+    //   "batches": [
+    //     {
+    //       "_id": "69973fe5680f1da6f754db0d",
+    //       "name": "UI/UX Design - May 2026",
+    //       "startDate": "2026-02-26T00:00:00.000Z",
+    //       "duration": "195",
+    //       "status": "upcoming",
+    //       "admissionFee": "2000",
+    //       "courseFee": "6000",
+    //       "description": "Web Designing Course",
+    //       "instructors": [],
+    //       "createdAt": "2026-02-19T16:52:53.825Z",
+    //       "updatedAt": "2026-02-19T16:52:53.825Z",
+    //       "__v": 0
+    //     },
+    //     {
+    //       "_id": "69974080680f1da6f754db12",
+    //       "name": "Graphic Design - June 2026",
+    //       "startDate": "2026-02-28T00:00:00.000Z",
+    //       "duration": "135",
+    //       "status": "upcoming",
+    //       "admissionFee": "1000",
+    //       "courseFee": "4000",
+    //       "description": "Banner Design, Marketing, Online Marketing",
+    //       "instructors": [],
+    //       "createdAt": "2026-02-19T16:55:28.471Z",
+    //       "updatedAt": "2026-02-19T16:55:28.471Z",
+    //       "__v": 0
+    //     },
+    //     {
+    //       "_id": "6996f607e5182c8c3f64b1e4",
+    //       "name": "Java FullStack - March 2026",
+    //       "startDate": "2026-03-05T00:00:00.000Z",
+    //       "duration": "180",
+    //       "status": "upcoming",
+    //       "admissionFee": "1500",
+    //       "courseFee": "15000",
+    //       "description": "Java FullStack is a comprehensive course covering both frontend and backend development using Java technologies. The course includes modules on Java fundamentals, Spring Boot, React, and database management.",
+    //       "instructors": [],
+    //       "createdAt": "2026-02-19T11:37:43.866Z",
+    //       "updatedAt": "2026-02-19T11:37:43.866Z",
+    //       "__v": 0
+    //     },
+    //     {
+    //       "_id": "699708df680f1da6f754daee",
+    //       "name": "DCA - March 2026",
+    //       "startDate": "2026-03-15T00:00:00.000Z",
+    //       "duration": "190",
+    //       "status": "ongoing",
+    //       "admissionFee": "1500",
+    //       "courseFee": "6000",
+    //       "description": "DCA ",
+    //       "instructors": [],
+    //       "createdAt": "2026-02-19T12:58:07.461Z",
+    //       "updatedAt": "2026-02-19T12:58:07.461Z",
+    //       "__v": 0
+    //     }
+    //   ]
+    // }
+
+    
+    async function getProducts() {
+      const response = await fetch("http://localhost:5050/api/batch/get")
+      const data = await response.json();
+
+      const batchContainer = document.getElementById("batchContainer");
+      for (let i = 0; i < data.batches.length; i++) {
+        batchContainer.innerHTML += `
+          <div class="bg-gray-400 p-5">
+            <h1>${data.batches[i].name}</h1>
+            <p>Duration : ${data.batches[i].duration} days</p>
+            <p>Status: ${data.batches[i].status}</p>
+            <p>Admission Fee: ${data.batches[i].admissionFee}</p>
+            <p>Course Fee: ${data.batches[i].courseFee}</p>
+          </div>
+        `;
+      }
+
+      // data.batches.forEach(batch => {
+      //   batchContainer.innerHTML += `
+      //     <div class="bg-gray-400 p-5">
+      //       <h1>${batch.name}</h1>
+      //       <p>Duration : 24 days</p>
+      //       <p>Status: upcoming</p>
+      //       <p>Admission Fee: 2000</p>
+      //       <p>Course Fee: 6000</p>
+      //     </div>
+      //   `;
+      // });
+    }
+
+    // getProducts();
+
+    async function getProductsComplexData() {
+      const response = await fetch("https://api.freeapi.app/api/v1/public/randomproducts?page=1&limit=10&inc=category%252Cprice%252Cthumbnail%252Cimages%252Ctitle%252Cid&query=mens-watches");
+      const data = await response.json();
+
+      const productsDetails = data.data.data;
+      const productsContainer = document.getElementById("productsContainer");
+      for (let i = 0; i < productsDetails.length; i++) {
+        productsContainer.innerHTML += `
+          <div class="bg-slate-300 p-5 rounded-md relative">
+            ${productsDetails[i].discountPercentage > 10 ? `<div class="absolute top-5 right-5 h-4 w-4 bg-red-500 rounded-full animate-bounce"></div>` : ""}
+
+            <h1 class="font-bold">${productsDetails[i].title}</h1>
+            <p class="italic text-sm text-slate-600">${productsDetails[i].description}</p>
+            <p class="bg-green-600 text-white">Price ₹${productsDetails[i].price}</p>
+            <p>Save ${productsDetails[i].discountPercentage}%</p>
+            <p>${productsDetails[i].rating}⭐</p>
+            <p>${productsDetails[i].brand}</p>
+          </div>
+        `; 
+        
+      }
+      
+      
+    }
+    getProductsComplexData();
+
+
+  </script>
+</body>
+</html>
