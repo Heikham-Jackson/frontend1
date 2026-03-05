@@ -24,41 +24,121 @@
         }
     </style>
 
-<body class="bg-gray-50">
-    <nav class="bg-slate-600 text-white flex items-center justify-between py-3 px-4">
-        <h1 class="text-2xl font-bold">
-            Company
-        </h1>
-        <div class="bg-white rounded-full flex">
-            <input type="search" class="bg-white  rounded-l-full  text-black py-1 px-2
-         max-[600px]:w-20 max-[400px]:block" placeholder="Search" />
-            <button class="  rounded-r-full bg-red-100 px-2 py-1 text-black
-        max-[400px]:rounded-full ">
-                <i class="fa-solid fa-search"></i>
-            </button>
-        </div>
-        <div class="text-sm flex gap-4 
-          max-sm:text-2.5 max-[400px]:gap-1 max-[400px]:hidden">
-            <a href="#" class="">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Help</a>
-            <div class="text-md max-md:hidden flex gap-4">
-                <a href="#" class="max-lg:hidden">Sell Products</a>
-                <a href="#" class="max-lg:hidden">Return & Order</a>
-                <a href="#" class="max-lg:hidden">Refund & Policies</a>
-                <a href="#">
-                    <i class="fa-solid fa-shopping-cart"></i>
+<body class="bg-gray-50 w-screen">
+    <nav class="bg-slate-600 text-white flex items-center justify-between  py-3 px-4 ">
+         <div class="flex items-center justify-between">
+            <h1 class="text-2xl font-bold pr-4">
+                Company
+            </h1>
+            <div class="bg-white rounded-full flex items-center relative max-[430px]:hidden">
+                <input type="search" class="bg-white  rounded-full  text-black py-1 pl-2 pr-6
+            max-[630px]:w-40 max-[580px]:w-30 " placeholder="Search" />
+                <a href="#" class="absolute  right-0  p-1 text-black
+            max-[400px]:rounded-full ">
+                    <i class="fa-solid fa-search"></i>
                 </a>
-                <a href="#">Log In</a>
             </div>
-
+            <div class="bg-white rounded-full flex items-center relative">
+                <input type="search" class="bg-white  rounded-full  text-black py-1 pl-2 pr-6
+            hidden max-[430px]:block max-[400px]:w-30 max-[350px]:w-20 max-[300px]:w-8" placeholder="Search" />
+                <a href="#" class="absolute  right-0  p-1 text-black
+            ">
+                    <i class="fa-solid fa-search"></i>
+                </a>
+            </div>
         </div>
-        <button class="hidden max-md:block">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+        <div class="relative pr-5 flex items-center justify-between gap-2">
+            <div class="text-[13px] flex gap-2 
+            max-sm:text-2.5 max-[400px]:gap-1 max-[430px]:hidden">
+                <select name="" id="" class="bg-white text-black rounded-full max-[1000px]:hidden">
+                    Categories
+                    <a href="">
+                        <option name="" id="">Categories</option>
+                        <option name="" id="">Categories</option>
+                        <option name="" id="">Categories</option>
+                        <option name="" id="">Categories</option>
+                        <option name="" id="">Categories</option>
+                    </a>
+                </select>
+                <a href="#" class="">Home</a>
+                <a href="#">About Us</a>
+                <a href="#" class="max-[4500px]:hidden">Help</a>
+                <div class="text-md  flex gap-3">
+                    <a href="#" class="max-[950px]:hidden">Sell Products</a>
+                    <a href="#" class="max-[850px]:hidden">Return & Order</a>
+                    <a href="#" class="max-[750px]:hidden">Refund & Policies</a>
+                    <a href="#" class="flex items-center gap-1 max-[540px]:hidden">
+                        <h2 class="">Cart </h2>
+                        <i class="fa-solid fa-shopping-cart"></i>
+                    </a>
+                    <a href="#" class="max-[490px]:hidden">Log In</a>
+                </div >
+                
+            </div>
+            
+            <button onclick="hamburger()" class="absolute right-0">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div>
+                <aside id="aside" class="p-4 flex flex-col justify-between
+                fixed z-10 top-0 -right-0 -right-70  bg-gray-300 h-full w-70 text-black transition-all  duration-500">
+                <div>    
+                    <div class="flex items-center justify-between pb-3">
+                        <h1 class="text-2xl font-semibold ">
+                            Dashboard
+                        </h1>
+                        <button onclick="hamburger()">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="text-lg flex flex-col gap-2 
+                        max-sm:text-2.5 max-[400px]:gap-1 max-[450px]:hidden">
+                        <a href="#" class="px-1">Home</a>
+                        <a href="#" class="px-1">About Us</a>
+                        <a href="#" class="px-1">Help</a>
+                        <a href="#" class="px-1">Products</a>
+                        <select name="" id="" class="w-30 ">
+                            Categories
+                            <a href="">
+                                <option name="" id="">Categories</option> 
+                                <option name="" id="">Categories</option>
+                                <option name="" id="">Categories</option>
+                                <option name="" id="">Categories</option>
+                                <option name="" id="">Categories</option>
+                            </a>
+                                    
+                        </select>
+                        <div class="text-lg flex flex-col gap-3 px-1">
+                            <a href="#" class="">
+                                Sell Products
+                            </a>
+                            <a href="#" class="">Return & Order</a>
+                            <a href="#" class="">Refund & Policies</a>
+                            <a href="#" class="flex items-center gap-2">
+                                <h2>Cart </h2>
+                                <i class="fa-solid fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="text-lg flex flex-col gap-2">
+                        <a href="#">
+                            <i class="fa-solid fa-user bg-white rounded-full py-[3px]"></i>
+                            Log In
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-gear bg-white rounded-full py-[3px]"></i>
+                            Setting
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        
     </nav>
 
     <!-- Hero section -->
+     <div id="content" class="">
     <header class="px-3 py-10 text-xl font-semibold flex items-center justify-center bg-linear-to-b from-slate-300 to-b-slate-50
     max-sm:flex-col max-sm:text-center ">
         
@@ -94,9 +174,43 @@
             Listen to Audiobooks more than 100k+ stories.
         </h1>
         <div id="audioBooksCard" 
-        class="grid grid-flow-col grid-cols-4 gap-3
-        max-sm:grid-cols-2 max-sm:grid-flow-row place-items-center">
+        class="grid grid-flow-col grid-cols-4 gap-4
+        max-sm:grid-cols-2 max-md:grid-flow-row  place-items-center">
              
+        </div>
+    </section>
+
+    <section class="px-4 py-10">
+    <h1 class="text-center text-xl font-semibold pb-4">
+        Services provided by our Company
+    </h1>
+        <div class="grid grid-flow-col grid-cols-4 p-4 gap-5
+    max-md:grid-flow-row max-md:grid-cols-2 max-sm:grid-cols-1">
+            <div class="bg-white text-center  border border-gray-300 shadow-md rounded-lg p-2 ">
+                <i class="fa-solid fa-truck-fast py-5 text-2xl text-yellow-500"></i>
+                <h1 class="pb-3 text-xl">
+                    Fast and Free Shipping All over the Globe
+                </h1>
+            </div>
+            <div class="bg-white text-center  border border-gray-300 shadow-md rounded-lg p-2 ">
+                <i class="fa-solid fa-phone-volume py-5 text-2xl text-yellow-500"></i>
+                <h1 class="pb-3 text-xl">
+                    24/7 Support
+                </h1>
+            </div>
+            <div class="bg-white text-center  border border-gray-300 shadow-md rounded-lg p-2 ">
+                <i class="fa-solid fa-coins py-5 text-2xl text-yellow-500"></i>
+                <h1 class="pb-3 text-xl">
+                    Exchange item 
+                </h1>
+            </div>
+            <div class="bg-white text-center  border border-gray-300 shadow-md rounded-lg p-2 ">
+                <i class="fa-solid fa-hand-holding-hand py-5 text-2xl text-yellow-500"></i>
+                <h1 class="pb-3 text-xl">
+                    Return or Refund Item
+                </h1>
+            </div>
+            
         </div>
     </section>
 
@@ -191,8 +305,14 @@
             © 1996-2026, Company.com, Inc. or its affiliates
         </h1>
     </footer>
+    </div>
 
     <script>
+        function hamburger() {
+      const aside = document.getElementById("aside"); 
+      aside.classList.toggle("right-0");
+    }
+
         const electronicsCardRender = document.getElementById("electronicsCardRender");
         for(let i=0; i<7; i++){
             electronicsCardRender.innerHTML +=`
@@ -234,16 +354,16 @@
         const audioBooksCard = document.getElementById("audioBooksCard");
         for(let i=0; i<4; i++){
             audioBooksCard.innerHTML+=`
-            <div class="min-w-25 max-w-60 p-2.5 rounded-lg bg-white border border-gray-300 shadow-md">
+            <div class="min-w-25 max-w-60 p-3 rounded-lg bg-white border border-gray-300 shadow-md">
                 <img 
-                class="  object-cover  rounded-md"
+                class=" w-57 object-cover  rounded-md"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8DFHvOeY-9tkaTIrPI2HMFLTuBuLuzQnARg&s" 
                 alt="">
-                <h1 class="font-semibold text-lg ">
+                <h1 class="font-semibold text-lg py-1 ">
                     Name
                 </h1>
                 <p class="text-sm py-1">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit....
+                    Lorem ipsum  djfawjdn djal iwedj dolor sit amet consectetur adipisicing elit....
                 </p>
             </div>
             `;
@@ -252,3 +372,39 @@
 </body>
 
 </html>
+
+
+
+
+
+<!--  <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll("#carousel img");
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.add("hidden");
+                if (i === index) slide.classList.remove("hidden");
+            });
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        // Optional: Auto-slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
+    
+           //Buttons
+            <button onclick="prevSlide()"
+                class="absolute top-1/2 left-2 -translate-y-1/2  text-white px-2 py-1 rounded"><i
+                    class=" rotate-90  text-3xl drop-shadow-lg  drop-shadow-blue-500 text-orange-400 fa-solid fa-angles-down"></i></button>
+            <button onclick="nextSlide()"
+                class="absolute top-1/2 right-2 -translate-y-1/2 text-white px-2 py-1 rounded"><i
+                    class="-rotate-90 drop-shadow-lg  drop-shadow-blue-500 text-3xl text-orange-400 fa-solid fa-angles-down"></i></button>
+        </div>
+    
+    -->
